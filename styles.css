@@ -1,3 +1,18 @@
+/* 기본 설정 및 변수 */
+:root {
+    --primary-color: #00A550;
+    --dark-bg: #1C1C1C;
+    --dark-card: #222222;
+    --dark-card-hover: #2C2C2C;
+    --text-light: #FFFFFF;
+    --text-muted: #999999;
+    --section-spacing: 80px;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    --box-shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.3);
+    --transition-default: 0.3s ease;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -12,19 +27,40 @@ body {
     padding: 0;
     flex-direction: column;
     align-items: center;
-    background-color: #1C1C1C;
-    color: #FFFFFF;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
     font-family: 'Inter', sans-serif;
     margin: 0;
     overflow-x: hidden;
 }
 
-.header, .hero, .about, .testimonials, .portfolio, footer {
+/* 레이아웃 공통 스타일 */
+.header, .hero, .about, .testimonials, .portfolio, .experience, footer {
     width: 100%;
     max-width: 1200px;
     padding: 0 20px;
 }
 
+/* 섹션 제목 공통 스타일 */
+.about h2, .testimonials h2, .portfolio h2, .experience h2 {
+    font-size: 48px;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.about h2::after, .testimonials h2::after, .portfolio h2::after, .experience h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+/* 헤더 및 네비게이션 */
 .header {
     display: flex;
     justify-content: space-between;
@@ -43,28 +79,60 @@ body {
 }
 
 .nav a {
-    color: #FFFFFF;
+    color: var(--text-light);
     text-decoration: none;
     font-size: 16px;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color var(--transition-default);
 }
 
+.nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width var(--transition-default);
+}
+
+.nav a:hover, .nav a.active {
+    color: var(--primary-color);
+}
+
+.nav a:hover::after, .nav a.active::after {
+    width: 100%;
+}
+
+/* 영웅 섹션 */
 .hero {
-    margin-top: 80px;
+    margin-top: var(--section-spacing);
 }
 
 .hero h1 {
     font-size: 96px;
     font-weight: bold;
     line-height: 1.1;
+    position: relative;
+    padding-left: 20px;
 }
 
+.hero h1::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    bottom: 10px;
+    width: 6px;
+    background-color: var(--primary-color);
+    border-radius: 3px;
+}
+
+/* 소개 섹션 */
 .about {
-    margin-top: 80px;
-}
-
-.about h2 {
-    font-size: 48px;
-    margin-bottom: 24px;
+    margin-top: var(--section-spacing);
 }
 
 .about p {
@@ -81,18 +149,14 @@ body {
 }
 
 .social-links a {
-    color: #FF4D4D;
+    color: var(--primary-color);
     text-decoration: none;
     font-size: 18px;
 }
 
+/* 테스티모니얼 섹션 */
 .testimonials {
-    margin-top: 80px;
-}
-
-.testimonials h2 {
-    font-size: 48px;
-    margin-bottom: 40px;
+    margin-top: var(--section-spacing);
 }
 
 .testimonials-grid {
@@ -102,9 +166,19 @@ body {
 }
 
 .testimonial-card {
-    background-color: #2C2C2C;
+    background-color: var(--dark-card);
     padding: 24px;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
+    transition: transform var(--transition-default), 
+                box-shadow var(--transition-default), 
+                border-top var(--transition-default);
+    border-top: 3px solid transparent;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow-hover);
+    border-top: 3px solid var(--primary-color);
 }
 
 .testimonial-header {
@@ -123,11 +197,16 @@ body {
 .testimonial-info h3 {
     font-size: 16px;
     margin-bottom: 4px;
+    transition: color var(--transition-default);
+}
+
+.testimonial-card:hover .testimonial-info h3 {
+    color: var(--primary-color);
 }
 
 .testimonial-info p {
     font-size: 14px;
-    color: #999999;
+    color: var(--text-muted);
 }
 
 .testimonial-text {
@@ -135,26 +214,9 @@ body {
     line-height: 1.5;
 }
 
-footer {
-    margin-top: 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 24px 0;
-    border-top: 1px solid #333333;
-}
-
-/* 포트폴리오 섹션 스타일 */
+/* 포트폴리오 섹션 */
 .portfolio {
-    margin-top: 80px;
-    width: 100%;
-    max-width: 1200px;
-    padding: 0 20px;
-}
-
-.portfolio h2 {
-    font-size: 48px;
-    margin-bottom: 40px;
+    margin-top: var(--section-spacing);
 }
 
 .portfolio-grid {
@@ -168,16 +230,20 @@ footer {
 .portfolio-item {
     width: 400px;
     background-color: #111111;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: var(--box-shadow);
+    transition: transform var(--transition-default), 
+                box-shadow var(--transition-default), 
+                border var(--transition-default);
     cursor: pointer;
+    border: 1px solid transparent;
 }
 
 .portfolio-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 16px rgba(0, 165, 80, 0.3);
+    border: 1px solid var(--primary-color);
 }
 
 .portfolio-item img {
@@ -187,30 +253,193 @@ footer {
     display: block;
 }
 
-.portfolio-info {
-    padding: 12px 16px;
+.portfolio-item .portfolio-info {
+    position: relative;
+    padding: 16px;
+}
+
+.portfolio-item .portfolio-info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 0;
+    background-color: var(--primary-color);
+    transition: height var(--transition-default);
+}
+
+.portfolio-item:hover .portfolio-info::before {
+    height: 100%;
 }
 
 .portfolio-title {
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 4px;
-    color: #FFFFFF;
+    color: var(--primary-color);
 }
 
 .portfolio-description {
     font-size: 14px;
-    color: #999999;
+    color: var(--text-muted);
 }
 
+/* 경험 섹션 */
+.experience {
+    margin-top: var(--section-spacing);
+}
+
+.experience-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.experience-item {
+    display: flex;
+    background-color: var(--dark-card);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: transform var(--transition-default), 
+                box-shadow var(--transition-default), 
+                border-left var(--transition-default);
+    padding: 24px;
+    border-left: 3px solid transparent;
+}
+
+.experience-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow-hover);
+    border-left: 3px solid var(--primary-color);
+}
+
+.experience-date {
+    flex: 0 0 150px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--primary-color);
+    padding-right: 24px;
+    border-right: 1px solid #444444;
+}
+
+.experience-content {
+    flex: 1;
+    padding-left: 24px;
+}
+
+.experience-content h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: var(--text-light);
+    transition: color var(--transition-default);
+}
+
+.experience-item:hover .experience-content h3 {
+    color: var(--primary-color);
+}
+
+.experience-company {
+    font-size: 16px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
+.experience-description {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.experience-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-tag {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    font-size: 14px;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+/* 푸터 */
+footer {
+    margin-top: var(--section-spacing);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px 0;
+    border-top: 1px solid #333333;
+}
+
+.contact-info {
+    text-align: right;
+}
+
+.contact-info p {
+    margin-bottom: 8px;
+    color: var(--text-muted);
+}
+
+.contact-info p:last-child {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+/* 반응형 디자인 */
 @media (max-width: 1280px) {
     .portfolio-grid {
         grid-template-columns: repeat(2, 400px);
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 880px) {
     .portfolio-grid {
         grid-template-columns: 400px;
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero h1 {
+        font-size: 72px;
+    }
+}
+
+@media (max-width: 768px) {
+    .experience-item {
+        flex-direction: column;
+    }
+    
+    .experience-date {
+        flex: 0 0 auto;
+        padding-right: 0;
+        padding-bottom: 12px;
+        margin-bottom: 12px;
+        border-right: none;
+        border-bottom: 1px solid #444444;
+    }
+    
+    .experience-content {
+        padding-left: 0;
+    }
+    
+    .header {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .nav {
+        width: 100%;
+        justify-content: space-between;
     }
 } 

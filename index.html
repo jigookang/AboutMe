@@ -3,155 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyBrand - Personal Website</title>
+    <meta name="description" content="개인 포트폴리오 및 이력서 웹사이트">
+    <meta name="keywords" content="웹 개발, 포트폴리오, 이력서, 프론트엔드">
+    <meta name="author" content="Jisoo">
+    <title>Jisoo - Personal Website</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
-        <div class="brand">MyBrand</div>
-        <nav class="nav">
-            <a href="#home">Home</a>
+        <div class="brand">Jisoo</div>
+        <nav class="nav" aria-label="주 메뉴">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
             <a href="#portfolio">Portfolio</a>
-            <a href="#blog">Blog</a>
+            <a href="#experience">Experience</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
-    <section class="hero">
-        <p>Based in Busan</p>
-        <h1>Welcome to<br>My Personal<br>Website</h1>
-        <p>Established in 2025</p>
-    </section>
+    <main>
+        <section id="home" class="hero">
+            <p>Based in Busan</p>
+            <h1>Welcome to<br>My Personal<br>Website</h1>
+            <p>Web Developer since 2018</p>
+        </section>
 
-    <section class="about">
-        <h2>About Me</h2>
-        <p>Hello! I'm Jisoo, a passionate web developer with a love for creating intuitive and dynamic user experiences. With a background in computer science, I specialize in building responsive and engaging websites.</p>
-        <div class="social-links">
-            <a href="#blog">blog</a>
-            <a href="#github">GitHub</a>
-            <a href="#email">Email</a>
+        <section id="about" class="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>Hello! I'm Jisoo, a passionate web developer with a love for creating intuitive and dynamic user experiences. With a background in computer science, I specialize in building responsive and engaging websites.</p>
+                <div class="social-links">
+                    <a href="#blog">Blog</a>
+                    <a href="https://github.com/jigookang" target="_blank" rel="noopener">GitHub</a>
+                    <a href="mailto:contact@example.com">Email</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials">
+            <h2>What People Are Saying</h2>
+            <div class="testimonials-grid">
+                <article class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Soo-Jin Park">
+                        <div class="testimonial-info">
+                            <h3>Soo-Jin Park</h3>
+                            <p>Tech Lead at TechCorp</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">Jisoo is an exceptional developer with a keen eye for detail.</p>
+                </article>
+                <article class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Hyun-Woo Kim">
+                        <div class="testimonial-info">
+                            <h3>Hyun-Woo Kim</h3>
+                            <p>Project Manager at WebSolutions</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">Working with Jisoo was a pleasure. Highly recommended!</p>
+                </article>
+                <article class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="Jung-Ho Lee">
+                        <div class="testimonial-info">
+                            <h3>Jung-Ho Lee</h3>
+                            <p>CEO at Software Inc.</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">Jisoo's work is top-notch. Always delivers on time.</p>
+                </article>
+                <article class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Eun-Ji Choi">
+                        <div class="testimonial-info">
+                            <h3>Eun-Ji Choi</h3>
+                            <p>Designer at Creative Minds</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">A true professional in every sense of the word.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="portfolio" class="portfolio">
+            <h2>My Portfolio</h2>
+            <div class="portfolio-grid">
+                <article class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Project A">
+                    <div class="portfolio-info">
+                        <div class="portfolio-title">Project A</div>
+                        <div class="portfolio-description">Web Design</div>
+                    </div>
+                </article>
+                <article class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1634942537034-2531766767d1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Project B">
+                    <div class="portfolio-info">
+                        <div class="portfolio-title">Project B</div>
+                        <div class="portfolio-description">Branding</div>
+                    </div>
+                </article>
+                <article class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Project C">
+                    <div class="portfolio-info">
+                        <div class="portfolio-title">Project C</div>
+                        <div class="portfolio-description">Illustration</div>
+                    </div>
+                </article>
+                <article class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1616696038562-574c18066055?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Project D">
+                    <div class="portfolio-info">
+                        <div class="portfolio-title">Project D</div>
+                        <div class="portfolio-description">Animation</div>
+                    </div>
+                </article>
+                <article class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Project E">
+                    <div class="portfolio-info">
+                        <div class="portfolio-title">Project E</div>
+                        <div class="portfolio-description">UI/UX</div>
+                    </div>
+                </article>
+                <article class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Project F">
+                    <div class="portfolio-info">
+                        <div class="portfolio-title">Project F</div>
+                        <div class="portfolio-description">Photography</div>
+                    </div>
+                </article>
+                <article class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1525909002-1b05e0c869d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Project G">
+                    <div class="portfolio-info">
+                        <div class="portfolio-title">Project G</div>
+                        <div class="portfolio-description">3D Modeling</div>
+                    </div>
+                </article>
+                <article class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Project H">
+                    <div class="portfolio-info">
+                        <div class="portfolio-title">Project H</div>
+                        <div class="portfolio-description">Video Editing</div>
+                    </div>
+                </article>
+                <article class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Project I">
+                    <div class="portfolio-info">
+                        <div class="portfolio-title">Project I</div>
+                        <div class="portfolio-description">Graphic Design</div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="experience" class="experience">
+            <h2>Experience</h2>
+            <div class="experience-timeline">
+                <article class="experience-item">
+                    <div class="experience-date">2023 - Present</div>
+                    <div class="experience-content">
+                        <h3>Senior Web Developer</h3>
+                        <p class="experience-company">TechCorp, Busan</p>
+                        <p class="experience-description">Lead developer for enterprise web applications, managing a team of 5 developers and implementing CI/CD pipelines.</p>
+                        <div class="experience-skills">
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">AWS</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="experience-item">
+                    <div class="experience-date">2020 - 2023</div>
+                    <div class="experience-content">
+                        <h3>Frontend Developer</h3>
+                        <p class="experience-company">WebSolutions, Seoul</p>
+                        <p class="experience-description">Developed responsive web applications for clients in various industries. Optimized performance and implemented SEO best practices.</p>
+                        <div class="experience-skills">
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">Vue.js</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="experience-item">
+                    <div class="experience-date">2018 - 2020</div>
+                    <div class="experience-content">
+                        <h3>Web Developer Intern</h3>
+                        <p class="experience-company">StartupX, Busan</p>
+                        <p class="experience-description">Assisted in building web applications, collaborated with the design team, and learned startup workflows.</p>
+                        <div class="experience-skills">
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">jQuery</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <p>© 2025 Jisoo</p>
+        <div class="contact-info">
+            <p>Email: contact@example.com</p>
+            <p>Phone: +82 10 1234 5678</p>
         </div>
-    </section>
-
-    <section class="testimonials">
-        <h2>What People Are Saying</h2>
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <div class="testimonial-header">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Soo-Jin Park">
-                    <div class="testimonial-info">
-                        <h3>Soo-Jin Park</h3>
-                        <p>Tech Lead at TechCorp</p>
-                    </div>
-                </div>
-                <p class="testimonial-text">Jisoo is an exceptional developer with a keen eye for detail.</p>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-header">
-                    <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Hyun-Woo Kim">
-                    <div class="testimonial-info">
-                        <h3>Hyun-Woo Kim</h3>
-                        <p>Project Manager at WebSolutions</p>
-                    </div>
-                </div>
-                <p class="testimonial-text">Working with Jisoo was a pleasure. Highly recommended!</p>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-header">
-                    <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="Jung-Ho Lee">
-                    <div class="testimonial-info">
-                        <h3>Jung-Ho Lee</h3>
-                        <p>CEO at Software Inc.</p>
-                    </div>
-                </div>
-                <p class="testimonial-text">Jisoo's work is top-notch. Always delivers on time.</p>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-header">
-                    <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Eun-Ji Choi">
-                    <div class="testimonial-info">
-                        <h3>Eun-Ji Choi</h3>
-                        <p>Designer at Creative Minds</p>
-                    </div>
-                </div>
-                <p class="testimonial-text">A true professional in every sense of the word.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="portfolio">
-        <h2>My Portfolio</h2>
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Project A">
-                <div class="portfolio-info">
-                    <div class="portfolio-title">Project A</div>
-                    <div class="portfolio-description">Web Design</div>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1634942537034-2531766767d1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Project B">
-                <div class="portfolio-info">
-                    <div class="portfolio-title">Project B</div>
-                    <div class="portfolio-description">Branding</div>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Project C">
-                <div class="portfolio-info">
-                    <div class="portfolio-title">Project C</div>
-                    <div class="portfolio-description">Illustration</div>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1616696038562-574c18066055?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Project D">
-                <div class="portfolio-info">
-                    <div class="portfolio-title">Project D</div>
-                    <div class="portfolio-description">Animation</div>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Project E">
-                <div class="portfolio-info">
-                    <div class="portfolio-title">Project E</div>
-                    <div class="portfolio-description">UI/UX</div>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Project F">
-                <div class="portfolio-info">
-                    <div class="portfolio-title">Project F</div>
-                    <div class="portfolio-description">Photography</div>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1525909002-1b05e0c869d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Project G">
-                <div class="portfolio-info">
-                    <div class="portfolio-title">Project G</div>
-                    <div class="portfolio-description">3D Modeling</div>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Project H">
-                <div class="portfolio-info">
-                    <div class="portfolio-title">Project H</div>
-                    <div class="portfolio-description">Video Editing</div>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Project I">
-                <div class="portfolio-info">
-                    <div class="portfolio-title">Project I</div>
-                    <div class="portfolio-description">Graphic Design</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>© 2025 MyBrand</p>
-        <a href="#contact">Contact</a>
     </footer>
 
     <script src="script.js"></script>
